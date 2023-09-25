@@ -6,4 +6,14 @@
   .first-content img {
     margin-bottom: 5%;
   }
+
+  .first-content .welcome-text {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .dev-images {
+    margin-left: 15%;
+    
+  }
 }
