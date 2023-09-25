@@ -3,108 +3,84 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <title>Links website</title>
-    <style>
-
-      body {
-          background-image: url(https://www.w3schools.com/howto/img_link_tree_template1_bg.jpg); /* The image used for background*/
-          background-repeat: no-repeat; /* Do not repeat the image */
-          background-position: center; /* Center the image */
-          background-size: cover; /* Resize the background image to cover the entire container */
-      }
-
-      .container {
-        width: 100%;
-        padding-right: 15px;
-        padding-left: 15px;
-        margin-right: auto;
-        margin-left: auto;
-      }
-
-      .image-container {
-        text-align: center;
-        width: 100%;
-      }
-
-      .links-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-      }
-
-      .link {
-        min-width: 50% !important;
-      }
-
-      @media (min-width: 1200px) {
-        .container {
-          max-width: 1140px;
-        }
-      }
-      @media (min-width: 992px) {
-        .container {
-          max-width: 960px;
-        }
-      }
-      @media (min-width: 768px) {
-      .container {
-          max-width: 720px;
-        }
-
-      .link {
-          width: 100%;
-        }
-      }
-      @media (min-width: 576px) {
-      .container {
-          max-width: 540px;
-        }
-      }
-
-      .w3-purple, .w3-hover-purple:hover {
-        color: #fff!important;
-        background-color: rgba(156, 39, 176, 0.6) !important;
-      }
-
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <title>Galina's website</title>
   </head>
 
-  <body class="w3-white">
-    <!-- Content container -->
-    <div class="container">
-      <!-- Image and name container. Change to your picture here. -->
-      <div class="image-container">
-        <img
-          src="https://github.com/GalkaKG/GalkaKG.github.io/blob/main/my_profile_pic_facebook.jpg?raw=true"
-          class="w3-margin"
-          alt="Person"
-          max-width="100%"
-          height="150px"
-          style="border-radius: 50%"
-        />
-        <div class="w3-text-white">
-          <p class="w3-text-white w3-large"> Welcome to <span class="w3-tag w3-large w3-round w3-black w3-text-white"><strong>Galina's</strong></span> link site!
-          </p>
-          <p class="w3-large"><strong>Here you can contact me: </strong></p>
+  <body>
+      <section class="first-content">
+        <div>
+          <img
+            src="https://github.com/GalkaKG/GalkaKG.github.io/blob/main/my_profile_pic_facebook.jpg?raw=true"
+            class="w3-margin"
+            alt="Person"
+            max-width="100%"
+            height="150px"
+            style="border-radius: 50%"
+          />
+          <p class="welcome-text"> Welcome to <strong>Galina's</strong> site!</p>
         </div>
+        
+        <div class="dev-images"> 
+            <img src="pictures/tools/python.jpeg" />
+            <img src="pictures/tools/js.png" />
+            <img src="pictures/tools/html.png" />
+            <img src="pictures/tools/css.png" />
+            <img src="pictures/tools/linux.jpeg" />
+            <img src="pictures/tools/django.png" />
+            <img src="pictures/tools/postgresql.png" />
+            <img src="pictures/tools/git.png" />
+            <img src="pictures/tools/docker.png" />
+        </div>
+      </section>
+      
+          
+      <div class="certificates">
+        <h2>Certificates</h2>
+        <div class="carousel-container">
+          <button id="prevBtn" class="carousel-button" onclick="changeSlide(-1)">Previous</button>
+          <div class="carousel-slide">
+            <div class="carousel-image">
+              <img src="pictures/certificate_programming_basics.jpg" alt="Image 1">
+            </div>
+            <div class="carousel-image">
+              <img src="pictures/fundamentals.jpeg" alt="Image 2">
+            </div>
+            <div class="carousel-image">  
+              <img src="pictures/certificate_advanced.jpg" alt="Image 3">
+            </div>
+            <div class="carousel-image"> 
+              <img src="pictures/OOP.jpeg" alt="Image 3">
+            </div>
+            <div class="carousel-image">
+              <img src="pictures/HTML & CSS - January 2023 - Certificate.jpeg" alt="Image 3">
+            </div>
+            <div class="carousel-image">
+              <img src="pictures/JS Front-end certificate.jpeg" alt="Image 3">
+            </div>
+            <div class="carousel-image">  
+              <img src="pictures/python_web_basics_certificate.jpeg" alt="Image 3">
+            </div>
+            <div class="carousel-image">  
+              <img src="pictures/python_web_framework_certificate.jpeg" alt="Image 3">
+            </div>
+            <div class="carousel-image">
+              <img src="pictures/linux_system_administration_certificate.jpeg" alt="Image 3">
+            </div>
+          </div>
+          <button id="nextBtn" class="carousel-button" onclick="changeSlide(1)">Next</button>
+      </div>
+     
+      </div>
 
-        <div class="links-container">
-          <a href="https://www.facebook.com/galina.georgieva.net" class="w3-button w3-hover-pink w3-large w3-round w3-purple w3-border link" target="_blank"><i class="fab fa-facebook"></i>Facebook</a>
-<!--           <a href="https://www.instagram.com/galina.kr.g/" class="w3-button w3-hover-pink w3-large w3-round w3-purple w3-border link" target="_blank"><i class="fab fa-instagram"></i>Instagram</a> -->
+      <div class="links-container">
+          <h2><strong>Here you can contact me: </strong></h2>
           <a href="https://www.linkedin.com/in/galina-georgieva-12a6a7113/" class="w3-button w3-hover-pink w3-large w3-round w3-purple w3-border link" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
           <a href="https://github.com/GalkaKG" class="w3-button w3-hover-pink w3-large w3-round w3-purple w3-border link" target="_blank"><i class="fa fa-github"></i>Github</a>
-        </div>
       </div>
-    </div>
 
-    <!-- Footer. -->
-    <footer class="w3-container w3-center w3-margin-top w3-margin-bottom w3-padding-top-48">
-      <a class="w3-margin-bottom" href="https://softuni.bg/" title="Here i'm currently learning programming with Python" target="_blank"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQseQh7T-9oFpZXbsx8xqWHbYDaET5YsQtL7BHzioQ5XZ2MS7ds5Ilka-FPQlGxTSd2SWI&usqp=CAU" width="50" height="40">
-      </a> 
-    <!-- End footer -->
-    </footer>
 
+  <script src="script.js"></script>
   </body>
 </html>
