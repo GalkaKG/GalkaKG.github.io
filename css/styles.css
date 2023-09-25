@@ -118,3 +118,7 @@ body {
 .links-container a {
   width: 20%;
 }
+
+.first-content div:first-child img{
+  margin-left: 35% !important;
+}
