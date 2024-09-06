@@ -18,8 +18,5 @@
 
 ###  Preview
 
-<video width="600" controls>
-  <source src="images/website-looks.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[![Video Thumbnail](images/thumbnail.jpg)](images/website-looks.mp4)
 
