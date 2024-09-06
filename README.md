@@ -18,7 +18,4 @@
 
 ###  Preview
 
-[![Video Thumbnail](images/img-website-how-looks.png)](images/website-looks.mp4)
-
-
-[Watch the video](images/website-looks.mp4)
+<img src="images/how-looks-website.png" />
