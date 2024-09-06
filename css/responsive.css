@@ -1,0 +1,19 @@
+@media screen and (max-width: 1165px) {
+  .first-content {
+    flex-direction: column;
+    
+  }
+  .first-content img {
+    margin-bottom: 5%;
+  }
+
+  .first-content .welcome-text {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .dev-images {
+    margin-left: 15%;
+    
+  }
+}
