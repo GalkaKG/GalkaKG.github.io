@@ -18,5 +18,7 @@
 
 ###  Preview
 
-[![Video Thumbnail](images/thumbnail.jpg)](images/website-looks.mp4)
+[![Video Thumbnail](images/img-website-how-looks.png)](images/website-looks.mp4)
 
+
+[Watch the video](images/website-looks.mp4)
