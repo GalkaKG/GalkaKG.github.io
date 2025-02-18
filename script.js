@@ -154,7 +154,7 @@ form.addEventListener("submit", function(e) {
         from_name: form.fullname.value,
         from_email: form.email.value,
         message: form.message.value,
-        to_email: "vteosveta@gmail.com"
+        to_email: "galina_georgieva_net@abv.bg"
     };
 
     // Изпращане на емейла използвайки EmailJS
