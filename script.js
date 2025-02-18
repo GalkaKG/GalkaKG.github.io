@@ -118,7 +118,7 @@ for (let i = 0; i < filterBtn.length; i++) {
 // Първо инициализираме EmailJS с публичния ключ
 (function() {
     // Инициализация на EmailJS
-    emailjs.init("iTKHfknVaqLnq3CI6");
+    emailjs.init("uKBS3sCy5Uf8WlJig");
 })();
 
 const form = document.querySelector("[data-form]");
@@ -159,10 +159,10 @@ form.addEventListener("submit", function(e) {
 
     // Изпращане на емейла използвайки EmailJS
     emailjs.send(
-        'service_1e6gm5t',  // Service ID от EmailJS
-        'template_hrbr1sm', // Template ID от EmailJS
+        'service_ek2o25r',  // Service ID от EmailJS
+        'template_xx0ijch', // Template ID от EmailJS
         templateParams,
-        'iTKHfknVaqLnq3CI6' // Public Key от EmailJS
+        'uKBS3sCy5Uf8WlJig' // Public Key от EmailJS
     )
     .then(function(response) {
         console.log("SUCCESS!", response.status, response.text);
