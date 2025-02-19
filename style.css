@@ -462,7 +462,6 @@ main {
   margin-bottom: 10px;
 }
 
-/* Download CV */
 .download-cv {
   display: flex;
   flex-direction: column;
@@ -493,6 +492,8 @@ main {
   width: 22px;
   height: 22px;
 }
+
+  
 
 /* Add iOS-specific fixes */
 @supports (-webkit-touch-callout: none) {
@@ -1867,7 +1868,7 @@ textarea.form-input::-webkit-resizer {
      */
 
   main {
-    max-width: 1200px;
+    max-width: 1250px;
     margin-inline: auto;
     display: flex;
     justify-content: center;
@@ -1900,7 +1901,7 @@ textarea.form-input::-webkit-resizer {
   }
 
   .avatar-box img {
-    width: 150px;
+    width: 200px;
   }
 
   .info-content .name {
