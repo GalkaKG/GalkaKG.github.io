@@ -10,7 +10,7 @@
 
   Responsive Portfolio Website using HTML, CSS, and JavaScript.
 
-  <a href="https://galkakg.github.io/"><strong>➥ Live Demo</strong></a>
+  <a href="https://galkakg.github.io/"><strong>➥ Live</strong></a>
 
 </div>
 
@@ -19,6 +19,4 @@
 ###  Preview
 
 <img src="website.png" />
-
-[My Portfolio](https://galkakg.github.io/)
 
