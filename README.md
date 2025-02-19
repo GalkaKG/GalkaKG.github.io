@@ -18,6 +18,7 @@
 
 ###  Preview
 
-<img src="images/how-looks-website.png" />
+<img src="website.png" />
 
-https://galkakg.github.io/
+[My Portfolio](https://galkakg.github.io/)
+
