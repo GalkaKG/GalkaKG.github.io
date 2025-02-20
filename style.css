@@ -2031,7 +2031,7 @@ textarea.form-input::-webkit-resizer {
   animation-duration: 3s;
 }
 
-/* Faster, Dynamic Animation */
+/* Dynamic Animation */
 @keyframes moveAround {
   0% {
     transform: translateY(0) translateX(0) scale(1);
