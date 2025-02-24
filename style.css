@@ -1259,7 +1259,7 @@ textarea.form-input::-webkit-resizer {
    * responsive larger than 450px screen
    */
 
-@media (min-width: 450px) {
+@media (min-width: 320px) {
   /**
      * client
      */
@@ -1275,6 +1275,23 @@ textarea.form-input::-webkit-resizer {
   .project-img,
   .blog-banner-box {
     height: auto;
+  }
+
+  .social-list {
+    justify-content: center;
+  }
+
+  .download-cv {
+    margin-top: 0;
+  }
+
+  .download-btn {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+
+  .social-list {
+    justify-content: center;
   }
 }
 
@@ -1347,10 +1364,6 @@ textarea.form-input::-webkit-resizer {
     margin-bottom: 30px;
   }
 
-  .sidebar.active {
-    max-height: 584px;
-  }
-
   .sidebar-info {
     gap: 25px;
   }
@@ -1360,7 +1373,7 @@ textarea.form-input::-webkit-resizer {
   }
 
   .avatar-box img {
-    width: 200px;
+    width: 130px;
   }
 
   .info-content .name {
@@ -1386,17 +1399,18 @@ textarea.form-input::-webkit-resizer {
     display: none;
   }
 
-  .separator {
-    margin: 32px 0;
-  }
-
-  .contacts-list {
-    gap: 20px;
-  }
-
   .contact-info {
     max-width: calc(100% - 64px);
     width: calc(100% - 64px);
+  }
+
+  .download-cv {
+    margin-top: 0;
+  }
+
+  .download-btn {
+    padding: 6px 14px;
+    font-size: 14px;
   }
 
   /**
@@ -1601,6 +1615,23 @@ textarea.form-input::-webkit-resizer {
   .form-btn ion-icon {
     font-size: 18px;
   }
+
+  
+
+  .social-list {
+    justify-content: center;
+  }
+}
+
+/**
+   * responsive larger than 550px screen
+   */
+
+@media (min-width: 550px) {
+  .download-btn {
+    font-size: 16px;
+    padding: 8px 18px;
+  }
 }
 
 /**
@@ -1628,6 +1659,14 @@ textarea.form-input::-webkit-resizer {
   .contacts-list {
     grid-template-columns: 1fr 1fr;
     gap: 30px 15px;
+  }
+
+  .separator {
+    margin: 32px 0;
+  } 
+
+  .contacts-list { 
+    gap: 20px;
   }
 
   /**
