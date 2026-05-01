@@ -250,7 +250,7 @@
             </li>
 
             <li class="navbar-item">
-              <button class="navbar-link" data-nav-link="">Projects</button>
+              <button class="navbar-link" data-nav-link="">Skills</button>
             </li>
 
             <li class="navbar-item">
@@ -434,18 +434,28 @@
 
                 <span>October 2023 - March 2025</span>
 
-                <p class="timeline-text">
-                  - Built and optimized the A1 statistics information service,
-                  enabling real-time data analysis and reporting. <br />
-                  - Contributed to the migration of a large-scale web
-                  application, improving efficiency and scalability. <br />
-                  - Developed and maintained a robust email service for
-                  automated notifications. <br />
-                  - Managed and implemented version updates for a desktop
-                  application. <br />
-                  - Collaborated with product owners to standardize the system
-                  development process.
-                </p>
+                <ul class="timeline-text">
+                  <li>
+                    Built and optimized the A1 statistics information service,
+                    enabling real-time data analysis and reporting.
+                  </li>
+                  <li>
+                    Contributed to the migration of a large-scale web
+                    application, improving efficiency and scalability.
+                  </li>
+                  <li>
+                    Developed and maintained a robust email service for
+                    automated notifications.
+                  </li>
+                  <li>
+                    Managed and implemented version updates for a desktop
+                    application.
+                  </li>
+                  <li>
+                    Collaborated with product owners to standardize the system
+                    development process.
+                  </li>
+                </ul>
               </li>
 
               <li class="timeline-item">
@@ -525,7 +535,7 @@
             </ol>
           </section>
 
-          <section class="skill">
+          <!-- <section class="skill">
             <h3 class="h3 skills-title">Technical Skills</h3>
 
             <ul class="skills-list content-card">
@@ -573,215 +583,67 @@
                 </div>
               </li>
             </ul>
-          </section>
+          </section> -->
         </article>
 
         <!--
           - #PROJECTS
         -->
 
-        <article class="projects" data-page="projects">
-          <header>
-            <h2 class="h2 article-title">My Projects</h2>
-          </header>
+        <article class="skills" data-page="skills">
+          <h3 class="h3 skills-title">Technical Skills</h3>
 
-          <section class="project-collection">
-            <ul class="filter-list">
-              <li class="filter-item">
-                <button class="active" data-filter-btn="">All</button>
-              </li>
-              <li class="filter-item">
-                <button data-filter-btn="">Machine Learning</button>
-              </li>
-              <li class="filter-item">
-                <button data-filter-btn="">Web Development</button>
-              </li>
-              <li class="filter-item">
-                <button data-filter-btn="">Desktop</button>
-              </li>
-            </ul>
+          <ul class="skills-list content-card">
+            <li class="skills-block">
+              <h5 class="h5">Programming</h5>
+              <p>Python, SQL, JavaScript, HTML & CSS</p>
+            </li>
 
-            <div class="filter-select-box">
-              <button class="filter-select" data-select="">
-                <div class="select-value" data-selecct-value="">
-                  Select category
-                </div>
-                <div class="select-icon">
-                  <ion-icon name="chevron-down"></ion-icon>
-                </div>
-              </button>
-              <ul class="select-list">
-                <li class="select-item">
-                  <button data-select-item="">All</button>
-                </li>
-                <li class="select-item">
-                  <button data-select-item="">Machine Learning</button>
-                </li>
-                <li class="select-item">
-                  <button data-select-item="">Web Development</button>
-                </li>
-                <li class="select-item">
-                  <button data-select-item="">Desktop</button>
-                </li>
-              </ul>
-            </div>
+            <li class="skills-block">
+              <h5 class="h5">Machine Learning & Data</h5>
+              <p>
+                Pandas, NumPy, Scikit-learn, TensorFlow, PyTorch, MLflow,
+                feature engineering, model evaluation
+              </p>
+            </li>
 
-            <ul class="project-list">
-              <li
-                class="project-item active"
-                data-filter-item=""
-                data-category="web development"
-              >
-                <a
-                  href="https://github.com/GalkaKG/Destinations_Catalogue"
-                  target="_blank"
-                >
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-                    <img
-                      src="https://res.cloudinary.com/drgmy2cuw/image/upload/v1739900012/destinations_catalogue_home_l8kaui.png"
-                      alt="Destinations Catalogue"
-                      loading="lazy"
-                    />
-                  </figure>
-                  <h3 class="project-title">Destinations Catalogue</h3>
-                  <p class="project-category">
-                    Django, DRF, HTML&CSS, JavaScript
-                  </p>
-                </a>
-              </li>
+            <li class="skills-block">
+              <h5 class="h5">Data Engineering</h5>
+              <p>
+                ETL pipelines, data preprocessing, workflow orchestration
+                (Airflow), batch processing
+              </p>
+            </li>
 
-              <li
-                class="project-item active"
-                data-filter-item=""
-                data-category="web development"
-              >
-                <a
-                  href="https://github.com/GalkaKG/interview_management_system"
-                  target="_blank"
-                >
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-                    <img
-                      src="https://res.cloudinary.com/drgmy2cuw/image/upload/v1739886846/interview_management_system_home_page_vk7jva.png"
-                      alt="Interview Management System"
-                      loading="lazy"
-                    />
-                  </figure>
-                  <h3 class="project-title">Interview Management System</h3>
-                  <p class="project-category">
-                    Python, Django, REST API, RabbitMQ
-                  </p>
-                </a>
-              </li>
+            <li class="skills-block">
+              <h5 class="h5">Backend & APIs</h5>
+              <p>
+                Django, FastAPI, RESTful services, microservices architecture,
+                API design
+              </p>
+            </li>
 
-              <li
-                class="project-item active"
-                data-filter-item=""
-                data-category="desktop"
-              >
-                <a
-                  href="https://github.com/GalkaKG/Snake-game-with-Python"
-                  target="_blank"
-                >
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-                    <img
-                      src="https://res.cloudinary.com/drgmy2cuw/image/upload/v1739901404/snake_game_den1rp.png"
-                      alt="Snake Game"
-                      loading="lazy"
-                    />
-                  </figure>
-                  <h3 class="project-title">Snake Game</h3>
-                  <p class="project-category">Python, Tkinter</p>
-                </a>
-              </li>
+            <li class="skills-block">
+              <h5 class="h5">Cloud & DevOps</h5>
+              <p>Docker, AWS (basics), Linux, CI/CD fundamentals</p>
+            </li>
 
-              <li
-                class="project-item active"
-                data-filter-item=""
-                data-category="machine learning"
-              >
-                <a
-                  href="https://health-predictor-3uopoqgwgsyjbmporfpjew.streamlit.app/"
-                  target="_blank"
-                >
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-                    <img
-                      src="https://res.cloudinary.com/drgmy2cuw/image/upload/v1739900448/Health_predictor_2_xsya06.png"
-                      alt="Health Predictor"
-                      loading="lazy"
-                    />
-                  </figure>
-                  <h3 class="project-title">Health Predictor</h3>
-                  <p class="project-category">Machine Learning, Scikit-learn</p>
-                </a>
-              </li>
+            <li class="skills-block">
+              <h5 class="h5">Databases</h5>
+              <p>PostgreSQL, MySQL, MSSQL</p>
+            </li>
 
-              <li
-                class="project-item active"
-                data-filter-item=""
-                data-category="machine learning"
-              >
-                <a
-                  href="https://github.com/GalkaKG/indoor-scene-segmentation/"
-                  target="_blank"
-                >
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-                    <img
-                      src="https://res.cloudinary.com/drgmy2cuw/image/upload/v1739901762/indoor_scene_segmentation_n4cbye.png"
-                      alt="Indoor scene segmentation"
-                      loading="lazy"
-                    />
-                  </figure>
-                  <h3 class="project-title">Indoor scene segmentation</h3>
-                  <p class="project-category">Deep Learning, PyTorch</p>
-                </a>
-              </li>
+            <li class="skills-block">
+              <h5 class="h5">Tools & Workflow</h5>
+              <p>Git, debugging, performance optimization</p>
+            </li>
 
-              <li
-                class="project-item active"
-                data-filter-item=""
-                data-category="machine learning"
-              >
-                <a
-                  href="https://github.com/GalkaKG/Predicting-Sofia-Real-Estate-Prices"
-                  target="_blank"
-                >
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-                    <img
-                      src="https://res.cloudinary.com/drgmy2cuw/image/upload/v1739955056/sofia_resl_estate_predicting_prices_oyhpco.png"
-                      alt="Predicting Sofia Real Estate Prices"
-                      loading="lazy"
-                    />
-                  </figure>
-                  <h3 class="project-title">
-                    Predicting Sofia Real Estate Prices
-                  </h3>
-                  <p class="project-category">
-                    Python, Machine Learning, Data Science
-                  </p>
-                </a>
-              </li>
-            </ul>
-          </section>
+            <li class="skills-block">
+              <h5 class="h5">Methodologies</h5>
+              <p>Agile (Scrum, Kanban)</p>
+            </li>
+          </ul>
         </article>
-
         <!--
           - #BLOG
         -->
@@ -799,7 +661,7 @@
                 >
                   <figure class="blog-banner-box">
                     <img
-                      src="https://www.hirethesciencemuseum.com/wp-content/uploads/2022/01/Science-Museum-Future-Tech-MattChungPhoto-ff-hi-res-9-scaled.jpg"
+                      src="data:image/jpeg;base64,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"
                       alt="Science &amp; Tech events"
                       loading="lazy"
                     />
@@ -818,7 +680,12 @@
                       Science &amp; Tech events
                     </h3>
 
-                    <p class="blog-text">in Sofia, Bulgaria</p>
+                    <p class="blog-text">
+                      <span>in Sofia, Bulgaria </span> Stay updated with the
+                      latest science and tech events in Sofia — meetups,
+                      conferences, and opportunities to connect with the local
+                      tech community.
+                    </p>
                   </div>
                 </a>
               </li>

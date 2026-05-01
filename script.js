@@ -1,109 +1,113 @@
 "use strict";
 
-// element toggle function
-const elementToggleFunc = function (elem) {
+/* =========================
+   ELEMENT TOGGLE
+========================= */
+const elementToggleFunc = (elem) => {
   elem.classList.toggle("active");
 };
 
-// sidebar variables
+/* =========================
+   SIDEBAR
+========================= */
 const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
-// sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () {
+sidebarBtn?.addEventListener("click", () => {
   elementToggleFunc(sidebar);
 });
 
-// testimonials variables
+/* =========================
+   TESTIMONIAL MODAL
+========================= */
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
 const modalContainer = document.querySelector("[data-modal-container]");
 const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
 const overlay = document.querySelector("[data-overlay]");
 
-// modal variable
 const modalImg = document.querySelector("[data-modal-img]");
 const modalTitle = document.querySelector("[data-modal-title]");
 const modalText = document.querySelector("[data-modal-text]");
 
-// modal toggle function
-const testimonialsModalFunc = function () {
+const toggleModal = () => {
   modalContainer.classList.toggle("active");
   overlay.classList.toggle("active");
 };
 
-// add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
-  testimonialsItem[i].addEventListener("click", function () {
+testimonialsItem.forEach((item) => {
+  item.addEventListener("click", function () {
     modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
     modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector(
-      "[data-testimonials-title]"
-    ).innerHTML;
-    modalText.innerHTML = this.querySelector(
-      "[data-testimonials-text]"
-    ).innerHTML;
 
-    testimonialsModalFunc();
+    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
+    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
+
+    toggleModal();
   });
-}
-
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
-
-// custom select variables
-const select = document.querySelector("[data-select]");
-const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
-const filterBtn = document.querySelectorAll("[data-filter-btn]");
-
-select.addEventListener("click", function () {
-  elementToggleFunc(this);
 });
 
-// add event in all select items
-for (let i = 0; i < selectItems.length; i++) {
-  selectItems[i].addEventListener("click", function () {
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    elementToggleFunc(select);
-    filterFunc(selectedValue);
+modalCloseBtn?.addEventListener("click", toggleModal);
+overlay?.addEventListener("click", toggleModal);
+
+/* =========================
+   CUSTOM SELECT + FILTER
+========================= */
+const select = document.querySelector("[data-select]");
+const selectItems = document.querySelectorAll("[data-select-item]");
+const selectValue = document.querySelector("[data-select-value]");
+const filterBtn = document.querySelectorAll("[data-filter-btn]");
+const filterItems = document.querySelectorAll("[data-filter-item]");
+
+select?.addEventListener("click", () => {
+  elementToggleFunc(select);
+});
+
+function filterFunc(value) {
+  filterItems.forEach((item) => {
+    const category = item.dataset.category;
+
+    if (value === "all") {
+      item.classList.add("active");
+      return;
+    }
+
+    item.classList.toggle("active", category === value);
   });
 }
 
-// filter variables
-const filterItems = document.querySelectorAll("[data-filter-item]");
+/* dropdown select */
+selectItems.forEach((item) => {
+  item.addEventListener("click", function () {
+    const value = this.innerText.toLowerCase();
 
-const filterFunc = function (selectedValue) {
-  for (let i = 0; i < filterItems.length; i++) {
-    if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
-      filterItems[i].classList.add("active");
-    } else {
-      filterItems[i].classList.remove("active");
-    }
-  }
-};
+    if (selectValue) selectValue.innerText = this.innerText;
 
-// add event in all filter button items for large screen
+    elementToggleFunc(select);
+    filterFunc(value);
+  });
+});
+
+/* buttons filter */
 let lastClickedBtn = filterBtn[0];
 
-for (let i = 0; i < filterBtn.length; i++) {
-  filterBtn[i].addEventListener("click", function () {
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    filterFunc(selectedValue);
+filterBtn.forEach((btn) => {
+  btn.addEventListener("click", function () {
+    const value = this.innerText.toLowerCase();
 
-    lastClickedBtn.classList.remove("active");
+    if (selectValue) selectValue.innerText = this.innerText;
+
+    filterFunc(value);
+
+    lastClickedBtn?.classList.remove("active");
     this.classList.add("active");
     lastClickedBtn = this;
   });
-}
+});
 
-// First we initialize EmailJS with the public key
+/* =========================
+   EMAILJS
+========================= */
 (function () {
-  // EmailJS initialization
   emailjs.init("uKBS3sCy5Uf8WlJig");
 })();
 
@@ -111,33 +115,25 @@ const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
 
-// Form validation function
 function validateForm() {
   const isValid = Array.from(formInputs).every((input) =>
     input.checkValidity()
   );
-  if (isValid) {
-    formBtn.removeAttribute("disabled");
-  } else {
-    formBtn.setAttribute("disabled", "");
-  }
+
+  formBtn?.toggleAttribute("disabled", !isValid);
 }
 
-// Input event listeners
 formInputs.forEach((input) => {
   input.addEventListener("input", validateForm);
   input.addEventListener("blur", validateForm);
 });
 
-// Processing form submission
-form.addEventListener("submit", function (e) {
+form?.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  // Disabling the form during submission
-  formBtn.setAttribute("disabled", "");
+  formBtn?.setAttribute("disabled", "");
   formInputs.forEach((input) => input.setAttribute("readonly", ""));
 
-  // Parameters for the template
   const templateParams = {
     from_name: form.fullname.value,
     from_email: form.email.value,
@@ -145,22 +141,19 @@ form.addEventListener("submit", function (e) {
     to_email: "galina_georgieva_net@abv.bg",
   };
 
-  // Sending an email using EmailJS
   emailjs
     .send(
-      "service_2nsspmc", // Service ID от EmailJS
-      "template_xx0ijch", // Template ID от EmailJS
+      "service_2nsspmc",
+      "template_xx0ijch",
       templateParams,
-      "uKBS3sCy5Uf8WlJig" // Public Key от EmailJS
+      "uKBS3sCy5Uf8WlJig"
     )
-    .then(function (response) {
-      console.log("SUCCESS!", response.status, response.text);
+    .then(() => {
       showNotification("Message sent successfully!", "success");
       form.reset();
     })
-    .catch(function (error) {
-      console.error("FAILED...", error);
-      showNotification("Failed to send message. Please try again.", "error");
+    .catch(() => {
+      showNotification("Failed to send message.", "error");
     })
     .finally(() => {
       formInputs.forEach((input) => input.removeAttribute("readonly"));
@@ -168,44 +161,46 @@ form.addEventListener("submit", function (e) {
     });
 });
 
-// Notification display function
 function showNotification(message, type) {
   const notification = document.createElement("div");
+
   notification.textContent = message;
+
   notification.style.cssText = `
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: ${type === "success" ? "#4CAF50" : "#f44336"};
-        color: white;
-        padding: 15px 30px;
-        border-radius: 8px;
-        z-index: 1000;
-    `;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: ${type === "success" ? "#4CAF50" : "#f44336"};
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    z-index: 1000;
+  `;
+
   document.body.appendChild(notification);
 
-  setTimeout(() => {
-    notification.remove();
-  }, 3000);
+  setTimeout(() => notification.remove(), 3000);
 }
 
-// page navigation variables
+/* =========================
+   PAGE NAVIGATION (FIXED)
+========================= */
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
-// add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
-      }
-    }
+navigationLinks.forEach((link) => {
+  link.addEventListener("click", function () {
+    const target = this.innerText.toLowerCase();
+
+    pages.forEach((page) => {
+      page.classList.toggle("active", page.dataset.page === target);
+    });
+
+    navigationLinks.forEach((btn) => {
+      btn.classList.toggle("active", btn === this);
+    });
+
+    window.scrollTo(0, 0);
   });
-}
+});

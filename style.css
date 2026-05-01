@@ -2069,6 +2069,19 @@ textarea.form-input::-webkit-resizer {
   left: 5%;
   animation-duration: 3s;
 }
+.skills-block {
+  margin-bottom: 18px;
+}
+
+.skills-block h5 {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.skills-block p {
+  color: #aaa;
+  line-height: 1.5;
+}
 
 /* Dynamic Animation */
 @keyframes moveAround {
