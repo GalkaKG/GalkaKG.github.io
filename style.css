@@ -2082,6 +2082,9 @@ textarea.form-input::-webkit-resizer {
   color: #aaa;
   line-height: 1.5;
 }
+.skills .h5 {
+  color: var(--vegas-gold);
+}
 
 /* Dynamic Animation */
 @keyframes moveAround {
