@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galina Georgieva | ML Engineer</title>
+
+    <style>
+      :root {
+        --dark: #0f172a;
+        --accent: #10b981;
+        --text: #111827;
+        --muted: #6b7280;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f3f4f6;
+        padding: 0;
+        color: var(--text);
+      }
+
+      /* PAGE */
+      .cv {
+        width: 210mm;
+        min-height: 297mm;
+        margin: auto;
+        background: white;
+        display: grid;
+        grid-template-columns: 32% 68%;
+        overflow: hidden;
+      }
+
+      /* SIDEBAR */
+      .sidebar {
+        background: var(--dark);
+        color: white;
+        padding: 20px;
+      }
+
+      .photo img {
+        width: 100px;
+        height: 100px;
+        border-radius: 14px;
+        object-fit: cover;
+        margin-bottom: 12px;
+      }
+
+      .name {
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.1;
+      }
+
+      .role {
+        color: var(--accent);
+        font-size: 12px;
+        margin: 8px 0 14px;
+        line-height: 1.3;
+      }
+
+      .block {
+        margin-bottom: 14px;
+      }
+
+      .title {
+        font-size: 10px;
+        letter-spacing: 1px;
+        color: #9ca3af;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+      }
+
+      .item {
+        font-size: 11px;
+        color: #e5e7eb;
+        line-height: 1.35;
+        margin-bottom: 4px;
+      }
+
+      .skill {
+        font-size: 11px;
+        color: #d1d5db;
+        line-height: 1.3;
+        margin-bottom: 4px;
+      }
+
+      /* MAIN */
+      .main {
+        padding: 22px;
+      }
+
+      .header {
+        margin-bottom: 14px;
+      }
+
+      .header h1 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+
+      .header p {
+        font-size: 12.5px;
+        /* color:var(--muted); */
+        color: black;
+        line-height: 1.4;
+      }
+
+      /* SECTIONS */
+      .section {
+        margin-bottom: 14px;
+      }
+
+      .section h2 {
+        font-size: 11px;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+      }
+
+      /* EXPERIENCE */
+      .job {
+        margin-bottom: 10px;
+      }
+
+      .job-title {
+        font-size: 14.5px;
+        font-weight: 800;
+        color: #111827;
+      }
+      .job {
+        margin-bottom: 10px;
+        padding-left: 10px;
+        border-left: 3px solid rgba(16, 185, 129, 0.5);
+      }
+
+      .job-meta {
+        font-size: 10.5px;
+        color: var(--muted);
+        margin-bottom: 6px;
+        font-weight: 500;
+      }
+
+      .job ul {
+        padding-left: 14px;
+      }
+
+      .job li {
+        font-size: 10.5px;
+        line-height: 1.35;
+        margin-bottom: 3px;
+      }
+
+      /* EDUCATION */
+      .edu {
+        margin-bottom: 8px;
+      }
+
+      .edu strong {
+        font-size: 14.5px;
+      }
+
+      .edu span {
+        font-size: 10px;
+        color: var(--muted);
+        display: block;
+      }
+
+      /* LANG */
+      .lang {
+        font-size: 12.5px;
+        margin-bottom: 4px;
+      }
+
+      /* PRINT FIX */
+      @page {
+        /* size: A4; */
+        margin: 0;
+      }
+
+      @media print {
+        html,
+        body {
+          width: 210mm;
+          height: 297mm;
+        }
+
+        body {
+          background: white;
+          margin: 0;
+          padding: 0;
+        }
+
+        .cv {
+          width: 210mm;
+          height: 297mm;
+          display: grid;
+          grid-template-columns: 38% 62%;
+          overflow: hidden;
+        }
+
+        * {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #f3f4f6;
+        padding: 0;
+        color: var(--text);
+        font-size: 13px; /* 👈 bigger base font */
+      }
+      .title {
+        font-size: 11px;
+        letter-spacing: 1px;
+        color: #9ca3af;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .item {
+        font-size: 12px;
+        color: #e5e7eb;
+        line-height: 1.4;
+        margin-bottom: 5px;
+      }
+
+      .skill {
+        font-size: 12px;
+        color: #d1d5db;
+        line-height: 1.4;
+        margin-bottom: 5px;
+      }
+
+      /* .cv {
+  transform: scale(0.95);
+  transform-origin: top left;
+} */
+      .skill {
+        font-size: 12.5px;
+        line-height: 1.6;
+        margin-bottom: 8px;
+        padding-left: 10px;
+        border-left: 3px solid rgba(16, 185, 129, 0.6);
+      }
+      .main {
+        padding: 22px;
+        font-size: 18px;
+      }
+      .job li {
+        font-size: 12.5px;
+        line-height: 1.4;
+        margin-bottom: 4px;
+      }
+      .section h2 {
+        font-size: 14.5px;
+        font-weight: 700;
+        color: var(--accent);
+      }
+      .edu ul {
+        margin-top: 4px;
+        padding-left: 14px;
+      }
+
+      .edu li {
+        font-size: 12.5px; /* match span */
+        color: black;
+        line-height: 1.35;
+      }
+      .header h1 {
+        margin-bottom: 10px;
+      }
+
+      .header p {
+        margin-top: 6px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="cv">
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <div class="photo">
+          <img src="Galina.jpg" />
+        </div>
+
+        <div class="name">Galina Georgieva</div>
+
+        <div class="role">
+          Machine Learning Engineer <br />
+          Data Engineer <br />
+          Data Scientist
+        </div>
+
+        <div class="block">
+          <div class="title">Contact</div>
+          <div class="item">Sofia, Bulgaria</div>
+          <div class="item">+359 890 919 920</div>
+          <div class="item">galina_georgieva_net@abv.bg</div>
+          <div class="item">
+            <a
+              href="https://www.linkedin.com/in/galina-georgieva-12a6a7113/"
+              target="_blank"
+              style="color: #e5e7eb; text-decoration: none"
+              >LinkedIn</a
+            >
+            ·
+            <a
+              href="https://github.com/GalkaKG"
+              target="_blank"
+              style="color: #e5e7eb; text-decoration: none"
+              >GitHub</a
+            >
+            ·
+            <a
+              href="https://galkakg.github.io/"
+              target="_blank"
+              style="color: #e5e7eb; text-decoration: none"
+              >Website</a
+            >
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="title">Technical Skills</div>
+
+          <div class="skill">
+            <b>Languages:</b> Python, SQL, JavaScript, HTML/CSS
+          </div>
+          <div class="skill">
+            <b>ML:</b> Pandas, NumPy, Scikit-learn, TensorFlow, PyTorch, MLflow
+          </div>
+          <div class="skill">
+            <b>Data:</b> ETL, Airflow, feature engineering, pipelines
+          </div>
+          <div class="skill"><b>Backend:</b> Django, FastAPI, REST APIs</div>
+          <div class="skill"><b>Cloud:</b> Docker, AWS (basics), Linux</div>
+          <div class="skill"><b>DB:</b> PostgreSQL, MySQL, MSSQL</div>
+          <div class="skill"><b>Tools:</b> Git, debugging, optimization</div>
+          <div class="skill"><b>Methodology:</b> Agile (Scrum, Kanban)</div>
+        </div>
+        <div class="block">
+          <div class="title">Soft Skills</div>
+
+          <div class="skill">Problem Solving & Analytical Thinking</div>
+          <div class="skill">Ownership & Responsibility</div>
+          <div class="skill">Team Collaboration</div>
+          <div class="skill">Communication</div>
+          <div class="skill">Fast Learning & Adaptability</div>
+        </div>
+
+        <div class="block">
+          <div class="title">Interests</div>
+
+          <div class="skill">Artificial Intelligence & LLMs</div>
+          <div class="skill">System Design & Architecture</div>
+          <div class="skill">Open-source projects</div>
+          <div class="skill">Science & Tech research</div>
+        </div>
+      </div>
+
+      <!-- MAIN -->
+      <div class="main">
+        <div class="header">
+          <h1>Machine Learning Engineer</h1>
+          <p>
+            Machine Learning Engineer with a strong backend engineering
+            background and experience building end-to-end data-driven systems.
+            Skilled in Python, data pipelines, and scalable ML solutions.
+            Experienced in designing APIs, processing large-scale datasets, and
+            integrating ML models into enterprise systems. Currently focused on
+            LLMs and AI agents.
+          </p>
+        </div>
+
+        <div class="section">
+          <h2>Experience</h2>
+
+          <div class="job">
+            <div class="job-title">
+              Machine Learning Engineer / Data Scientist — Postbank
+            </div>
+            <div class="job-meta">2025 – Present</div>
+            <ul>
+              <li>
+                Developed ML models for risk scoring, segmentation, fraud
+                detection
+              </li>
+              <li>
+                Performed feature engineering and evaluation on large datasets
+              </li>
+              <li>
+                Built and maintained data pipelines and deployment workflows
+              </li>
+              <li>Integrated models into enterprise systems</li>
+              <li>Improved performance via feature selection and tuning</li>
+              <li>Collaborated with business teams on data-driven solutions</li>
+              <li>Mentored team members and shared best practices</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-title">Backend Developer — Haemimont AD</div>
+            <div class="job-meta">2023 – 2025</div>
+            <ul>
+              <li>Designed RESTful APIs for large-scale data workflows</li>
+              <li>Built data processing and validation pipelines</li>
+              <li>Optimized backend performance and response time</li>
+              <li>Integrated data-driven features into production systems</li>
+              <li>Migrated legacy components to improved architecture</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Education</h2>
+
+          <div class="edu">
+            <strong>AI & LLM Engineering — SoftUni</strong>
+            <span>2025 – Present</span>
+            <ul>
+              <li>
+                Working with LLM frameworks such as LangChain, LangGraph, Claude
+              </li>
+              <li>Building AI agents and exploring real-world use cases</li>
+              <li>Integrating LLMs into applications and workflows</li>
+            </ul>
+          </div>
+
+          <div class="edu">
+            <strong
+              >Machine Learning & Data Science & Deep Learning — SoftUni</strong
+            >
+            <span>2024 – 2025</span>
+            <ul>
+              <li>
+                Covered core ML concepts: supervised/unsupervised learning,
+                model evaluation
+              </li>
+              <li>
+                Worked with data preprocessing, feature engineering, and model
+                building
+              </li>
+              <li>Explored deep learning fundamentals</li>
+            </ul>
+          </div>
+
+          <div class="edu">
+            <strong>Software Engineering with Python — SoftUni</strong>
+            <span>2022 – 2023</span>
+            <ul>
+              <li>Built backend applications using Python</li>
+              <li>Worked with databases, REST APIs, and web frameworks</li>
+              <li>Developed full-stack project experience</li>
+            </ul>
+          </div>
+
+          <div class="edu">
+            <strong>Bachelor’s Degree in Bulgarian Language and History</strong>
+            <span>University of Veliko Tarnovo</span>
+            <ul>
+              <li>
+                Pedagogical background with strong communication and analytical
+                skills
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Languages</h2>
+          <div class="lang">Bulgarian — Native</div>
+          <div class="lang">English — Professional Working Proficiency</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galina Georgieva | AI Engineer</title>
+
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card: #111827;
+      --card-light: #172033;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --emerald: #10b981;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top right, rgba(16,185,129,0.15), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(16,185,129,0.08), transparent 30%),
+        var(--bg);
+
+      font-family: Inter, Arial, sans-serif;
+      color: var(--text);
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .main-card {
+      background: rgba(17,24,39,0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    /* HERO */
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 40px;
+      padding: 55px;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1 {
+      font-size: 62px;
+      line-height: 0.95;
+      margin-bottom: 18px;
+      letter-spacing: -2px;
+    }
+
+    .title {
+      color: var(--emerald);
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    .summary {
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 15px;
+      max-width: 700px;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .contact a,
+    .contact span {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .contact a:hover {
+      color: var(--emerald);
+    }
+
+    .photo-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .photo-wrapper img {
+      width: 240px;
+      height: 240px;
+      border-radius: 28px;
+      object-fit: cover;
+      border: 2px solid rgba(16,185,129,0.3);
+      box-shadow:
+        0 0 30px rgba(16,185,129,0.2),
+        0 0 80px rgba(16,185,129,0.08);
+    }
+
+    /* CONTENT */
+
+    .content {
+      padding: 50px;
+    }
+
+    .section {
+      margin-bottom: 50px;
+    }
+
+    .section-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--emerald);
+      margin-bottom: 28px;
+      font-weight: 700;
+    }
+
+    /* EXPERIENCE */
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .timeline-card {
+      background: var(--card-light);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      transition: 0.25s ease;
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(16,185,129,0.25);
+      box-shadow: 0 10px 30px rgba(16,185,129,0.08);
+    }
+
+    .job-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 14px;
+    }
+
+    .job-title {
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+    .company {
+      color: var(--emerald);
+      margin-top: 6px;
+      font-size: 15px;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .job-description {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .skill-box {
+      background: var(--card-light);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 24px;
+      transition: 0.25s ease;
+    }
+
+    .skill-box:hover {
+      transform: translateY(-4px);
+      border-color: rgba(16,185,129,0.25);
+    }
+
+    .skill-box h3 {
+      margin-bottom: 14px;
+      color: var(--text);
+      font-size: 18px;
+    }
+
+    .skill-box p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    /* TECH TAGS */
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      background: rgba(16,185,129,0.12);
+      border: 1px solid rgba(16,185,129,0.18);
+      color: #d1fae5;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width: 950px) {
+
+      body {
+        padding: 20px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .photo-wrapper {
+        order: -1;
+      }
+
+      .contact {
+        justify-content: center;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .job-top {
+        flex-direction: column;
+      }
+
+      h1 {
+        font-size: 44px;
+      }
+
+      .content,
+      .hero {
+        padding: 32px;
+      }
+
+      .photo-wrapper img {
+        width: 180px;
+        height: 180px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="main-card">
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div>
+
+        <h1>
+          Galina<br>
+          Georgieva
+        </h1>
+
+        <div class="title">
+          Machine Learning Engineer · AI Engineer · Backend Engineer
+        </div>
+
+        <p class="summary">
+          Machine Learning Engineer with strong backend expertise,
+          focused on scalable AI systems, LLM applications,
+          intelligent automation, and production-ready backend architectures.
+          Experienced in Python development, APIs, data pipelines,
+          and integrating AI capabilities into real-world platforms.
+        </p>
+
+        <div class="contact">
+          <span>Sofia, Bulgaria</span>
+          <span>+359 890 919 920</span>
+
+          <a href="#">LinkedIn</a>
+          <a href="#">GitHub</a>
+          <a href="#">Portfolio</a>
+        </div>
+
+      </div>
+
+      <div class="photo-wrapper">
+        <img src="your-photo.jpg" alt="Galina Georgieva">
+      </div>
+
+    </section>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+      <!-- EXPERIENCE -->
+      <section class="section">
+
+        <div class="section-title">
+          Experience
+        </div>
+
+        <div class="timeline">
+
+          <div class="timeline-card">
+
+            <div class="job-top">
+
+              <div>
+                <div class="job-title">
+                  Backend Developer
+                </div>
+
+                <div class="company">
+                  Haemimont AD
+                </div>
+              </div>
+
+              <div class="date">
+                Oct 2023 — Present
+              </div>
+
+            </div>
+
+            <div class="job-description">
+              Developing scalable backend systems and APIs,
+              improving architecture reliability,
+              optimizing workflows and maintaining enterprise-grade services.
+            </div>
+
+          </div>
+
+          <div class="timeline-card">
+
+            <div class="job-top">
+
+              <div>
+                <div class="job-title">
+                  AI & LLM Engineering
+                </div>
+
+                <div class="company">
+                  SoftUni
+                </div>
+              </div>
+
+              <div class="date">
+                2025 — Present
+              </div>
+
+            </div>
+
+            <div class="job-description">
+              Building AI agents, working with LangChain and Claude,
+              exploring LLM orchestration, prompt engineering,
+              and integrating AI systems into modern applications.
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- SKILLS -->
+      <section class="section">
+
+        <div class="section-title">
+          Core Expertise
+        </div>
+
+        <div class="skills-grid">
+
+          <div class="skill-box">
+            <h3>Machine Learning & AI</h3>
+
+            <p>
+              LLMs, AI Agents, LangChain,
+              Prompt Engineering,
+              ML Pipelines, AI Workflows
+            </p>
+          </div>
+
+          <div class="skill-box">
+            <h3>Backend Engineering</h3>
+
+            <p>
+              Python, Django,
+              REST APIs, Docker,
+              System Architecture,
+              Backend Optimization
+            </p>
+          </div>
+
+          <div class="skill-box">
+            <h3>Data Engineering</h3>
+
+            <p>
+              SQL, ETL Pipelines,
+              Data Processing,
+              Automation,
+              Analytics Systems
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- TECHNOLOGIES -->
+      <section class="section">
+
+        <div class="section-title">
+          Technologies
+        </div>
+
+        <div class="tags">
+
+          <div class="tag">Python</div>
+          <div class="tag">Django</div>
+          <div class="tag">LangChain</div>
+          <div class="tag">Docker</div>
+          <div class="tag">SQL</div>
+          <div class="tag">REST APIs</div>
+          <div class="tag">LLMs</div>
+          <div class="tag">Git</div>
+          <div class="tag">Linux</div>
+          <div class="tag">AI Agents</div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
