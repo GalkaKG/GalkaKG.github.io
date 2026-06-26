@@ -334,6 +334,47 @@
     font-weight: 700;
   }
 
+  /* ===== EDUCATION (MAIN AREA FIX) ===== */
+
+.main .edu-list {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.main .edu-item {
+  flex: 1;
+  min-width: 220px;
+  padding: 14px 16px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.main .edu-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-left: 0;
+}
+
+.main .edu-degree {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.main .edu-field {
+  font-size: 13.5px;
+  color: var(--text-2);
+}
+
+.main .edu-school {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
   @media print {
     body { background: white; }
     .cv { max-width: 100%; margin: 0; box-shadow: none; }
@@ -481,21 +522,7 @@
         </div>
       </div>
 
-      <div class="sb-section">
-        <div class="sb-label">Education</div>
-        <div class="edu-list">
-          <div>
-            <div class="edu-degree">Bachelor's Degree</div>
-            <div class="edu-field">Bulgarian Language &amp; History</div>
-            <div class="edu-school">Univ. of Veliko Tarnovo</div>
-          </div>
-          <div>
-            <div class="edu-degree">Professional Training</div>
-            <div class="edu-field">AI &amp; Machine Learning</div>
-            <div class="edu-field">Software Engineering with Python</div>
-          </div>
-        </div>
-      </div>
+      
 
       <div class="sb-section">
         <div class="sb-label">Languages</div>
@@ -579,21 +606,31 @@
             </ul>
           </div>
 
-          <div class="job">
-            <div class="job-header">
-              <span class="job-title-text">Freelance Software Developer</span>
-              <span class="job-date">2021 – 2023</span>
-            </div>
-            <ul class="job-bullets">
-              <li>Developed Python applications and backend services for various clients.</li>
-              <li>Built REST APIs and web applications from specification to delivery.</li>
-              <li>Designed automation and data processing solutions tailored to client workflows.</li>
-            </ul>
-          </div>
+          
 
         </div>
       </section>
+      
+      <section class="section">
+  <h2 class="section-head">Education</h2>
 
+  <div class="edu-list">
+
+    <div class="edu-item">
+      <div class="edu-degree">Bachelor's Degree</div>
+      <div class="edu-field">Bulgarian Language & History</div>
+      <div class="edu-school">University of Veliko Tarnovo</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">Professional Training</div>
+      <div class="edu-field">AI & Machine Learning</div>
+      <div class="edu-field">Software Engineering with Python</div>
+    </div>
+
+  </div>
+</section>
+            
     </main>
 
   </div>
