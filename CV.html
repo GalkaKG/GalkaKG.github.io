@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galina Georgieva — CV</title>
+
+  <style>
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --green-dark: #1B4332;   /** #0D2137;   **/
+    --green-mid:  #40916C;  /** **/
+    --green-light: #D8F3DC;
+    --bg:          #F8FAF9;
+    --surface:     #FFFFFF;
+    --text:        #1A1A1A;
+    --text-2:      #3D3D3D;
+    --muted:       #6B7280;
+    --rule:        #E4EAE6;
+    --sidebar-w:   278px;
+  }
+
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .cv {
+    display: grid;
+    grid-template-columns: var(--sidebar-w) 1fr;
+    max-width: 980px;
+    min-height: 1150px;
+    margin: 40px auto;
+    background: var(--surface);
+    box-shadow: 0 6px 40px rgba(0,0,0,.13);
+  }
+
+  /* ─── SIDEBAR ──────────────────────────────────── */
+  .sidebar {
+    background: var(--green-dark);
+    color: rgba(255,255,255,.88);
+    padding: 40px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.1);
+    border: 2px solid rgba(255,255,255,.28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 27px;
+    color: rgba(255,255,255,.9);
+    letter-spacing: 3px;
+    margin: 0 auto;
+    flex-shrink: 0;
+  }
+
+  .sb-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.42);
+    padding-bottom: 9px;
+    border-bottom: 1px solid rgba(255,255,255,.14);
+    margin-bottom: 14px;
+  }
+
+  .contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    font-size: 12.5px;
+    color: rgba(255,255,255,.82);
+    line-height: 1.4;
+    word-break: break-all;
+  }
+
+  .contact-list li svg {
+    flex-shrink: 0;
+    margin-top: 1px;
+    opacity: .6;
+  }
+
+  .skill-group {
+    margin-bottom: 15px;
+  }
+
+  .skill-group:last-child { margin-bottom: 0; }
+
+  .skill-group-name {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.45);
+    margin-bottom: 7px;
+  }
+
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .pill {
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.17);
+    color: rgba(255,255,255,.83);
+    font-size: 11.5px;
+    padding: 3px 9px;
+    border-radius: 3px;
+    line-height: 1.4;
+  }
+
+  .edu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .edu-degree {
+    font-weight: 600;
+    font-size: 12.5px;
+    color: white;
+    margin-bottom: 2px;
+  }
+
+  .edu-field {
+    font-size: 12px;
+    color: rgba(255,255,255,.72);
+    line-height: 1.5;
+  }
+
+  .edu-school {
+    font-size: 11.5px;
+    color: rgba(255,255,255,.45);
+    margin-top: 1px;
+  }
+
+  .lang-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+
+  .lang-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  .lang-name {
+    font-size: 13px;
+    color: rgba(255,255,255,.85);
+  }
+
+  .lang-level {
+    font-size: 10.5px;
+    color: rgba(255,255,255,.4);
+  }
+
+  .dots {
+    display: flex;
+    gap: 5px;
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.18);
+  }
+
+  .dot.on { background: rgba(255,255,255,.82); }
+
+  /* ─── MAIN ─────────────────────────────────────── */
+  .main {
+    padding: 44px 50px;
+  }
+
+  .cv-header {
+    margin-bottom: 34px;
+    padding-bottom: 26px;
+    border-bottom: 1.5px solid var(--rule);
+  }
+
+  .cv-name {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 40px;
+    font-weight: normal;
+    letter-spacing: -.5px;
+    color: var(--text);
+    text-wrap: balance;
+    margin-bottom: 9px;
+  }
+
+  .cv-title {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--green-mid);
+  }
+
+  .section { margin-bottom: 36px; }
+
+  .section-head {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-head::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .profile-text {
+    font-size: 14.5px;
+    line-height: 1.78;
+    color: var(--text-2);
+  }
+
+  .job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .job {
+    position: relative;
+    padding-left: 22px;
+    padding-bottom: 30px;
+    border-left: 2px solid var(--rule);
+  }
+
+  .job:last-child {
+    border-left: 2px solid transparent;
+    padding-bottom: 0;
+  }
+
+  .job::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 7px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--green-mid);
+  }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 3px;
+  }
+
+  .job-title-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .job-date {
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .job-company {
+    font-size: 13px;
+    color: var(--green-mid);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .job-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .job-bullets li {
+    font-size: 13.5px;
+    line-height: 1.62;
+    color: var(--text-2);
+    padding-left: 15px;
+    position: relative;
+  }
+
+  .job-bullets li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--green-mid);
+    font-weight: 700;
+  }
+
+  @media print {
+    body { background: white; }
+    .cv { max-width: 100%; margin: 0; box-shadow: none; }
+
+    @page {
+      margin-top: 1cm;
+      margin-bottom: 1cm;
+      /* headers/footers come from browser margins — removing them via CSS isn't fully supported */
+    }
+  }
+
+
+  </style>
+  </head>
+  <body>
+
+  <div class="cv">
+
+    <aside class="sidebar">
+
+      <div class="avatar">GG</div>
+
+      <div class="sb-section">
+        <div class="sb-label">Contact</div>
+        <ul class="contact-list">
+          <li>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+  stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            Sofia, Bulgaria
+          </li>
+          <li>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+  stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2
+  0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.15-.15a2 2 0 0 1 2.11-.45 
+  12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 18z"/>
+            </svg>
+            +359 890 919 920
+          </li>
+          <li>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+  stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 
+  2,6"/>
+            </svg>
+            galina_georgieva_net@abv.bg
+          </li>
+          <li>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+  stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" 
+  height="12"/><circle cx="4" cy="4" r="2"/>
+            </svg> <a href="https://www.linkedin.com/in/galina-georgieva-12a6a7113/" target="_blank" style="color: inherit; text-decoration: none;"> 
+            LinkedIn
+            </a>
+          </li>
+          <li>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+  stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 
+  5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 
+  3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+            <a href="https://github.com/GalkaKG" target="_blank" style="color: inherit; text-decoration: none;"> GitHub </a>
+          </li>
+          <li>
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <line x1="2" y1="12" x2="22" y2="12"/>
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    </svg>
+    <a href="https://galkakg.github.io/" target="_blank" style="color: inherit; text-decoration: none;">Portfolio</a>
+  </li>
+
+        </ul>
+      </div>
+
+      <div class="sb-section">
+        <div class="sb-label">Skills</div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Programming</div>
+          <div class="pills">
+            <span class="pill">Python</span>
+            <span class="pill">SQL</span>
+            <span class="pill">JavaScript</span>
+            <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Machine Learning</div>
+          <div class="pills">
+            <span class="pill">Scikit-learn</span>
+            <span class="pill">TensorFlow</span>
+            <span class="pill">PyTorch</span>
+            <span class="pill">MLflow</span>
+            <span class="pill">Pandas</span>
+            <span class="pill">NumPy</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Data Engineering</div>
+          <div class="pills">
+            <span class="pill">ETL Pipelines</span>
+            <span class="pill">Airflow</span>
+            <span class="pill">Feature Eng.</span>
+            <span class="pill">Batch Processing</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Backend</div>
+          <div class="pills">
+            <span class="pill">FastAPI</span>
+            <span class="pill">Django</span>
+            <span class="pill">Flask</span>
+            <span class="pill">REST APIs</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Cloud &amp; DevOps</div>
+          <div class="pills">
+            <span class="pill">Docker</span>
+            <span class="pill">AWS</span>
+            <span class="pill">Azure</span>
+            <span class="pill">Linux</span>
+            <span class="pill">CI/CD</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Databases</div>
+          <div class="pills">
+            <span class="pill">PostgreSQL</span>
+            <span class="pill">MySQL</span>
+            <span class="pill">MSSQL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sb-section">
+        <div class="sb-label">Education</div>
+        <div class="edu-list">
+          <div>
+            <div class="edu-degree">Bachelor's Degree</div>
+            <div class="edu-field">Bulgarian Language &amp; History</div>
+            <div class="edu-school">Univ. of Veliko Tarnovo</div>
+          </div>
+          <div>
+            <div class="edu-degree">Professional Training</div>
+            <div class="edu-field">AI &amp; Machine Learning</div>
+            <div class="edu-field">Software Engineering with Python</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sb-section">
+        <div class="sb-label">Languages</div>
+        <ul class="lang-list">
+          <li>
+            <div class="lang-row">
+              <span class="lang-name">Bulgarian</span>
+              <span class="lang-level">Native</span>
+            </div>
+            <div class="dots">
+              <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span 
+  class="dot on"></span>
+            </div>
+          </li>
+          <li>
+            <div class="lang-row">
+              <span class="lang-name">English</span>
+              <span class="lang-level">Professional</span>
+            </div>
+            <div class="dots">
+              <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span 
+  class="dot"></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <main class="main">
+
+      <header class="cv-header">
+        <h1 class="cv-name">Galina Georgieva</h1>
+        <div class="cv-title">Machine Learning Engineer &nbsp;&middot;&nbsp; Data Engineer </div>
+      </header>
+
+      <section class="section">
+        <h2 class="section-head">Profile</h2>
+        <p class="profile-text">
+          Machine Learning Engineer with a strong software engineering background and hands-on experience building production-ready
+  machine learning systems.
+          Experienced across the complete ML lifecycle — feature engineering, model development, deployment, monitoring, MLOps, and
+  backend integration.
+          Passionate about building scalable, maintainable, production-grade AI solutions that create measurable business value.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-head">Experience</h2>
+        <div class="job-list">
+
+          <div class="job">
+            <div class="job-header">
+              <span class="job-title-text">Machine Learning &amp; Data Engineer</span>
+              <span class="job-date">2025 – Present</span>
+            </div>
+            <div class="job-company">Postbank</div>
+            <ul class="job-bullets">
+              <li>Developed and deployed production ML models for customer behavior prediction and automated decision-making.</li>
+              <li>Designed end-to-end ML pipelines covering preprocessing, feature engineering, model training, deployment, and batch
+  inference.</li>
+              <li>Built model monitoring systems for performance degradation and data drift detection.</li>
+              <li>Collaborated with business and risk teams to deliver production-ready ML solutions aligned to regulatory
+  requirements.</li>
+              <li>Improved predictive performance through advanced feature engineering and hyperparameter optimization.</li>
+              <li>Mentored junior engineers and contributed to ML development standards and best practices.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <span class="job-title-text">Backend Developer</span>
+              <span class="job-date">2023 – 2025</span>
+            </div>
+            <div class="job-company">Haemimont AD</div>
+            <ul class="job-bullets">
+              <li>Developed high-performance REST APIs powering core product functionality.</li>
+              <li>Designed ETL and validation pipelines for production systems handling large data volumes.</li>
+              <li>Improved backend scalability and database query performance.</li>
+              <li>Led migration of legacy systems to modular, maintainable architecture.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <span class="job-title-text">Freelance Software Developer</span>
+              <span class="job-date">2021 – 2023</span>
+            </div>
+            <ul class="job-bullets">
+              <li>Developed Python applications and backend services for various clients.</li>
+              <li>Built REST APIs and web applications from specification to delivery.</li>
+              <li>Designed automation and data processing solutions tailored to client workflows.</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  </body>
+  </html>
